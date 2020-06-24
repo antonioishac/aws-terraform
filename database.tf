@@ -23,5 +23,6 @@ module "rds" {
     family = "postgres11"
 
     subnet_ids = "${flatten(chunklist(aws_subnet.private_subnet.*.id, 1))}"
+    
     major_engine_version = "11"
 }
